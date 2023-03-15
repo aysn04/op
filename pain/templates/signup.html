@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sign Up</title>
+    </head>
+    <body>
+        <h1>Sign Up</h1>
+        {% if error_msg %}
+        <p style="color:red;">{{ error_msg }}</p>
+        {% endif %}
+        <form method="POST" action="{{ url_for('signup') }}">
+            <label>Username:</label><br>
+            <input type="text" name="username" required><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br>
+            <label>Confirm Password:</label><br>
+            <input type="password" name="confirm_password" required><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br>
+            <label>Are you over 13?</label>
+            <input type="checkbox" name="over_13" required><br>
+            <input type="submit" value="Sign Up">
+        </form>
+        <a href="{{ url_for('home') }}">Back to home page</a>
+    </body>
+</html>

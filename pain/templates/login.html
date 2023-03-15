@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h1>Login</h1>
+        {% if error_msg %}
+        <p style="color:red;">{{ error_msg }}</p>
+        {% endif %}
+        <form method="POST" action="{{ url_for('login') }}">
+            <label>Username:</label><br>
+            <input type="text" name="username" required><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br>
+            <input type="submit" value="Login">
+        </form>
+        <a href="{{ url_for('home') }}">Back to home page</a>
+    </body>
+</html>
